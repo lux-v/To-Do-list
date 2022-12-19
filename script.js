@@ -58,16 +58,14 @@ function setCookie(cvalue) {
 function checkCookie() {
     var theme = localStorage.getItem("theme");
 
-    console.log("theme: " + theme)
+
     if (theme == "ljubicasta") {
-
-
         h1.classList.remove("plava");
         dodaj.classList.remove("plava");
         buttonPromjenaBoje.classList.remove("plava");
         buttonPromjenaBoje.classList.add("ljubicasta");
     }
-    if (theme == "plava") {
+    else {
         h1.classList.add("plava");
         dodaj.classList.add("plava");
         buttonPromjenaBoje.classList.remove("ljubicasta");
