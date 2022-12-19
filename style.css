@@ -69,6 +69,7 @@ h1.plava{
     font-size: calc(20px + 0.5vw);
     height: 40px;
     width: 90%;
+    height:100%;
     position: relative;
     margin: 5px;
     overflow:hidden;
