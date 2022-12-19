@@ -22,11 +22,16 @@ function promijeniBoju() {
         dodaj.classList.remove("plava");
         buttonPromjenaBoje.classList.remove("plava");
         buttonPromjenaBoje.classList.add("ljubicasta");
+
+        localStorage.setItem("theme", "ljubicasta");
+
     } else {
         h1.classList.add("plava");
         dodaj.classList.add("plava");
         buttonPromjenaBoje.classList.remove("ljubicasta");
         buttonPromjenaBoje.classList.add("plava");
+
+        localStorage.setItem("theme", "plava");
     }
 }
 
@@ -42,6 +47,37 @@ function handleUlClick(elem) {
     precrtajElement(elem);
     obrisiElement(elem);
 }
+
+function setCookie(cvalue) {
+    var d = new Date();
+    d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = "theme=" + cvalue + ";" + expires + "; path=/";
+}
+
+function checkCookie() {
+    var theme = localStorage.getItem("theme");
+
+    console.log("theme: " + theme)
+    if (theme == "ljubicasta") {
+
+
+        h1.classList.remove("plava");
+        dodaj.classList.remove("plava");
+        buttonPromjenaBoje.classList.remove("plava");
+        buttonPromjenaBoje.classList.add("ljubicasta");
+    }
+    if (theme == "plava") {
+        h1.classList.add("plava");
+        dodaj.classList.add("plava");
+        buttonPromjenaBoje.classList.remove("ljubicasta");
+        buttonPromjenaBoje.classList.add("plava");
+
+
+    }
+}
+
+checkCookie();
 
 buttonPromjenaBoje.addEventListener("click", promijeniBoju)
 
