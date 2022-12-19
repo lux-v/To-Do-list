@@ -74,7 +74,7 @@ h1.plava{
     overflow:hidden;
 }
 
-.instanca.active{
+.instanca.zavrseno{
     text-decoration: line-through;
     color: #979797;
 }
