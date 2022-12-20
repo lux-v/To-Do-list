@@ -1,3 +1,10 @@
+
+/* 
+
+https://codepen.io/sosuke/pen/Pjoqqp 
+
+*/
+
 .favicon{
     filter: invert(98%) sepia(51%) saturate(0%) hue-rotate(309deg) brightness(107%) contrast(102%);
 }
@@ -24,12 +31,16 @@ body{
 h1{
     margin-top: 150px;
     padding: 20px;
-    background-color: #af7eeb;
+    background-color: #979797;
     text-align: center;
     width: 30%;
     font-weight: 300;
     border-radius: 10px;
     box-sizing: border-box; 
+}
+
+h1.ljubicasta{
+    background-color: #af7eeb;
 }
 
 h1.plava{
@@ -98,7 +109,7 @@ button{
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: calc(12px + 0.5vw);
-    border-color:#af7eeb;
+    background-color: #979797;
     border-radius: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     font-weight: 500;
@@ -106,6 +117,10 @@ button{
     position: absolute;
     bottom: -24;
     border-style: none;
+}
+
+button.ljubicasta{
+    border-color:#af7eeb;
 }
 
 button.plava{
@@ -160,6 +175,11 @@ button.plava{
     right: 20;
 }
 
+.icons.promjenaBoje:hover{
+    transform: scale(1.1);
+    filter: invert(47%) sepia(83%) saturate(1369%) hue-rotate(208deg) brightness(102%) contrast(93%);
+}
+
 .icons.promjenaBoje.plava:hover{
     transform: scale(1.1);
     filter: invert(53%) sepia(32%) saturate(957%) hue-rotate(221deg) brightness(102%) contrast(84%);
@@ -171,7 +191,7 @@ button.plava{
 
 .icons.promjenaBoje.ljubicasta:hover{
     transform: scale(1.1);
-    filter: invert(47%) sepia(83%) saturate(1369%) hue-rotate(208deg) brightness(102%) contrast(93%);
+    filter: invert(63%) sepia(0%) saturate(1%) hue-rotate(298deg) brightness(94%) contrast(97%);
 }
 
 .icons.promjenaBoje.ljubicasta{
@@ -189,12 +209,21 @@ input{
     visibility: hidden;
 }
 .dodajButton{
-    background-color: #af7eeb;
     transition: transform 0.3s;
 }
 .dodajButton:hover{
     transform: scale(1.1);
 }
+
+.dodajButton.ljubicasta{
+    background-color: #af7eeb;
+}
+
+.dodajButton.plava{
+    background-color: #7489f6;
+}
+
+
 
 p{
     color: gray;

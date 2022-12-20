@@ -2,29 +2,60 @@ var addNewTask = document.getElementById("addNewTask");
 var buttonPromjenaBoje = document.getElementById("promjenaBoje");
 var h1 = document.querySelector("h1");
 
+const themeColors = {
+    default: "siva",
+    theme1: 'plava',
+    theme2: 'ljubicasta',
+}
+
 var theme;
 
 function changeThemeColor() {
-    if (theme === "plava") {
-        localStorage.setItem("theme", "ljubicasta");
+    if (theme === themeColors.theme1) {
+        localStorage.setItem("theme", themeColors.theme2);
         checkLocalSotrage()
 
-    } else {
-        localStorage.setItem("theme", "plava");
+    } else if (theme === themeColors.theme2) {
+        localStorage.setItem("theme", themeColors.default);
         checkLocalSotrage();
     }
+    else {
+        localStorage.setItem("theme", themeColors.theme1);
+        checkLocalSotrage();
+    }
+
 }
 
 function loadColorFromLocalStorage(theme) {
-    if (theme === "plava") {
-        h1.classList.add("plava");
-        addNewTask.classList.add("plava");
-        buttonPromjenaBoje.classList.add("plava");
-    } else {
-        h1.classList.remove("plava");
-        addNewTask.classList.remove("plava");
-        buttonPromjenaBoje.classList.remove("plava");
-        buttonPromjenaBoje.classList.add("ljubicasta");
+    if (theme === themeColors.theme1) {
+        h1.classList.remove(themeColors.theme2);
+        addNewTask.classList.remove(themeColors.theme2);
+        buttonPromjenaBoje.classList.remove(themeColors.theme2);
+
+        h1.classList.add(themeColors.theme1);
+        addNewTask.classList.add(themeColors.theme1);
+        buttonPromjenaBoje.classList.add(themeColors.theme1);
+    } else if (theme === themeColors.theme2) {
+        h1.classList.remove(themeColors.theme1);
+        addNewTask.classList.remove(themeColors.theme1);
+        buttonPromjenaBoje.classList.remove(themeColors.theme1);
+
+        h1.classList.add(themeColors.theme2);
+        addNewTask.classList.add(themeColors.theme2);
+        buttonPromjenaBoje.classList.add(themeColors.theme2);
+    }
+    else {
+        h1.classList.remove(themeColors.theme1);
+        addNewTask.classList.remove(themeColors.theme1);
+        buttonPromjenaBoje.classList.remove(themeColors.theme1);
+
+        h1.classList.remove(themeColors.theme2);
+        addNewTask.classList.remove(themeColors.theme2);
+        buttonPromjenaBoje.classList.remove(themeColors.theme2);
+
+        h1.classList.add(themeColors.default);
+        addNewTask.classList.add(themeColors.default);
+        buttonPromjenaBoje.classList.add(themeColors.default);
     }
 }
 
